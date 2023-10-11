@@ -17,11 +17,15 @@ export class PrismaService
     });
   }
 
+  // when we connect
   async onModuleInit() {
     await this.$connect();
   }
 
+  // to disconnect - should disconnect after each interaction
   async onModuleDestroy() {
     await this.$disconnect();
   }
 }
+
+// in express this is the pg pool stuff - or pg client. 

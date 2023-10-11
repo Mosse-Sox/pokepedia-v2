@@ -17,6 +17,12 @@ model User {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   avatar        Bytes?
-
+  collection    Collection[]
   @@map("users")
+}
+
+model Collection {
+  id            String         @id @default(uuid())
+  user     User      @relation(fields: [userId], references: [id])
+  userId   String
 }
