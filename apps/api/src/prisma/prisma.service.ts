@@ -2,6 +2,7 @@ import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaClient } from '@prisma/client';
 
+// in express this is the pg pool stuff - or pg client
 @Injectable()
 export class PrismaService
   extends PrismaClient
@@ -27,5 +28,3 @@ export class PrismaService
     await this.$disconnect();
   }
 }
-
-// in express this is the pg pool stuff - or pg client. 
