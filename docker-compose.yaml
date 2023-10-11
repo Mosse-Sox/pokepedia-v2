@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db-dev:
+    image: postgres:15
+    ports: 
+      - 5434:5432
+    environment:
+      POSTGRES_USER: devUser
+      POSTGRES_PASSWORD: postdev
+      POSTGRES_DB: poke-dev
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
